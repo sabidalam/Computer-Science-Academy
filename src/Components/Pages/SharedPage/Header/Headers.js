@@ -10,11 +10,13 @@ const Headers = () => {
         <div className='mb-5'>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-                    <Navbar.Brand className='fs-6' href="#home">
-                        <div className='d-flex'>
-                            <img src={logo} alt="" style={{ width: '50px' }} />
-                            <p className='ms-1 my-0 fw-semibold text-primary'>Computer Science <br />Academy</p>
-                        </div>
+                    <Navbar.Brand className='fs-6'>
+                        <Link className='text-decoration-none' to='/'>
+                            <div className='d-flex'>
+                                <img src={logo} alt="" style={{ width: '50px' }} />
+                                <p className='ms-1 my-0 fw-semibold text-primary'>Computer Science <br />Academy</p>
+                            </div>
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
