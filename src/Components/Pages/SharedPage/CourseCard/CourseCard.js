@@ -5,8 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
-    console.log(course);
-    const { name, rating, thumbnail_url, level } = course;
+    const { _id, name, rating, thumbnail_url, level } = course;
     return (
         <div>
             <Card className='mb-5' style={{ width: '90%' }}>
@@ -24,7 +23,7 @@ const CourseCard = ({ course }) => {
                                     <span className='ms-2 fw-semibold'>{rating}</span>
                                 </div>
                             </Card.Text>
-                            <Link>
+                            <Link to={`/course/${_id}`}>
                                 <Button variant="primary">Show Details</Button>
                             </Link>
                         </Card.Body>
