@@ -3,6 +3,7 @@ import Main from "../../Components/Layout/Main";
 import Blog from "../../Components/Pages/Blog/Blog";
 import Courses from "../../Components/Pages/Courses/Courses";
 import Home from "../../Components/Pages/Home/Home";
+import Login from "../../Components/Pages/Login/Login/Login";
 import SignUp from "../../Components/Pages/Login/SignUp/SignUp";
 
 export const routes = createBrowserRouter([
@@ -31,6 +32,10 @@ export const routes = createBrowserRouter([
     {
         path: '/blog',
         element: <Blog></Blog>
+    },
+    {
+        path: '/login',
+        element: <Login></Login>
     },
     {
         path: '/signUp',

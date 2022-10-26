@@ -10,7 +10,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const SignUp = () => {
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
     const { createUser, providerLogin, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -28,10 +28,14 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 handleUpdateUser(name, photoURL)
                 navigate('/');
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     const handleUpdateUser = (name, photoURL) => {
@@ -46,9 +50,13 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 navigate('/');
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.massage)
+            })
     }
     return (
         <div className='w-25 mx-auto container my-5'>
@@ -70,9 +78,12 @@ const SignUp = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
-                <Button variant="warning" type="submit" className='w-100'>
+                <Button variant="primary" type="submit" className='w-100'>
                     SignUp
                 </Button>
+                <Form.Text className='text-danger'>
+                    {error}
+                </Form.Text>
                 <p className='my-2 text-center'><small>Already have an account? <Link to='/login'>Login</Link></small></p>
             </Form>
             <div className='d-flex justify-content-evenly'>
@@ -84,7 +95,6 @@ const SignUp = () => {
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> < FcGoogle className='fs-4 mb-1'></FcGoogle> SignIn via Google</Button>
                 <Button variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> SignIn via Github</Button>
             </ButtonGroup>
-            {error}
         </div>
     );
 };
