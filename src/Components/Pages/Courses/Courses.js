@@ -6,7 +6,7 @@ import { FaDownload } from 'react-icons/fa';
 
 const Courses = () => {
     const courseDetail = useLoaderData();
-    const { topic_id, thumbnail_url, name, details, instructor, others_info, price } = courseDetail;
+    const { _id, topic_id, thumbnail_url, name, details, instructor, others_info, price } = courseDetail;
     return (
         <div>
             <Card className='mx-auto mb-5 w-75'>
@@ -25,7 +25,7 @@ const Courses = () => {
                     <p>Department: {others_info?.departments}</p>
                     <p>Topic: {others_info?.topics}</p>
                     <h6>Price: ${price}</h6>
-                    <Link>
+                    <Link to={`/checkout/${_id}`}>
                         <Button variant="primary">Get Premium Access</Button>
                     </Link>
                 </Card.Body>
