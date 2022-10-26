@@ -8,7 +8,7 @@ const CourseCard = ({ course }) => {
     const { _id, name, rating, thumbnail_url, level } = course;
     return (
         <div>
-            <Card className='mb-5' style={{ width: '90%' }}>
+            <Card className='mb-5 mx-auto' style={{ width: '90%' }}>
                 <div className='d-md-flex align-items-center'>
                     <div className='text-center'>
                         <Card.Img className='m-2' style={{ width: '200px', height: '150px' }} src={thumbnail_url} />
@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
                                 </div>
                             </Card.Text>
                             <Link to={`/course/${_id}`}>
-                                <Button variant="primary">Show Details</Button>
+                                <Button variant="outline-primary">Show Details</Button>
                             </Link>
                         </Card.Body>
                     </div>
