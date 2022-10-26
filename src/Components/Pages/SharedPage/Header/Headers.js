@@ -6,9 +6,25 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import logo from '../../../../assets/favicon.png';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import { Button, Image } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
+
 
 const Headers = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>
+    )
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+
+    }
     return (
         <div className='mb-5'>
             <Navbar collapseOnSelect expand="lg" bg="primary" variant="primary">
@@ -28,11 +44,39 @@ const Headers = () => {
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/faq'>FAQ</Link>
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/blog'>Blog</Link>
                         </Nav>
+
                         <Nav>
-                            <Nav.Link href="#deets"></Nav.Link>
-                            <Nav.Link >
-                                {user?.name}
-                            </Nav.Link>
+                            {
+                                user?.email ?
+                                    <>
+                                        <OverlayTrigger
+                                            placement="bottom"
+                                            delay={{ show: 250, hide: 400 }}
+                                            overlay={renderTooltip}
+                                        >
+                                            <button className='border-0 bg-primary'>
+                                                {
+                                                    user?.photoURL ?
+                                                        <Image
+                                                            className='mt-1'
+                                                            roundedCircle
+                                                            src={user?.photoURL}
+                                                            style={{ height: '30px' }}>
+                                                        </Image>
+                                                        :
+                                                        <FaUser className='mt-2'></FaUser>
+                                                }
+                                            </button>
+                                        </OverlayTrigger>
+                                        <Button onClick={handleLogout} className='ms-2' variant="light" size="sm"><Link className='text-decoration-none' to='/login'>LogOut</Link></Button>
+
+                                    </>
+                                    :
+                                    <>
+                                        <Link className='fw-semibold me-4 text-decoration-none text-light' to='/login'>Login</Link>
+                                        <Link className='fw-semibold me-4 text-decoration-none text-light' to='/signUp'>SignUp</Link>
+                                    </>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
