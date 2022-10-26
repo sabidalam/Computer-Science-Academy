@@ -23,9 +23,7 @@ const CourseCard = ({ course }) => {
                                     <span className='ms-2 fw-semibold'>{rating}</span>
                                 </div>
                             </Card.Text>
-                            <Link to={`/course/${_id}`}>
-                                <Button variant="outline-primary">Show Details</Button>
-                            </Link>
+                            <Link className='text-decoration-none' to={`/course/${_id}`}>Show Details</Link>
                         </Card.Body>
                     </div>
                 </div>

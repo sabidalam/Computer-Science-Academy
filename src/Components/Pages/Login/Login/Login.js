@@ -7,18 +7,20 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import Headers from '../../SharedPage/Header/Headers';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { signIn, providerLogin } = useContext(AuthContext);
+    const { signIn, providerGoogleLogin, providerGithubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
 
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+
+    const githubProvider = new GithubAuthProvider();
 
     const handleLogin = event => {
         event.preventDefault();
@@ -42,7 +44,7 @@ const Login = () => {
     }
 
     const handleGoogleSignIn = () => {
-        providerLogin(provider)
+        providerGoogleLogin(googleProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -54,6 +56,20 @@ const Login = () => {
                 setError(error.massage)
             })
 
+    }
+
+    const handleGithubSignIn = () => {
+        providerGithubLogin(githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                navigate('/');
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.massage)
+            })
     }
     return (
         <div>
@@ -86,7 +102,7 @@ const Login = () => {
                 </div>
                 <ButtonGroup vertical className='w-100'>
                     <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> < FcGoogle className='fs-4 mb-1'></FcGoogle> Login via Google</Button>
-                    <Button variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
+                    <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
                 </ButtonGroup>
 
             </div>

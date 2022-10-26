@@ -47,7 +47,7 @@ const Headers = () => {
 
                         <Nav>
                             {
-                                user?.email ?
+                                user?.uid ?
                                     <>
                                         <OverlayTrigger
                                             placement="bottom"

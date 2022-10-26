@@ -13,9 +13,14 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState({});
     const [loader, setLoader] = useState(true);
 
-    const providerLogin = (provider) => {
+    const providerGoogleLogin = (googleProvider) => {
         setLoader(true);
-        return signInWithPopup(auth, provider);
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const providerGithubLogin = (githubProvider) => {
+        setLoader(true);
+        return signInWithPopup(auth, githubProvider);
     }
 
     const createUser = (email, password) => {
@@ -48,7 +53,7 @@ const AuthProvider = ({ children }) => {
         return updateProfile(auth.currentUser, profile)
     }
 
-    const authInfo = { user, loader, createUser, providerLogin, signIn, logOut, updateUserProfile }
+    const authInfo = { user, loader, createUser, providerGoogleLogin, signIn, logOut, updateUserProfile, providerGithubLogin }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
