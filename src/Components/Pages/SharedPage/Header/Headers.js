@@ -64,7 +64,7 @@ const Headers = () => {
                                                             style={{ height: '30px' }}>
                                                         </Image>
                                                         :
-                                                        <FaUser className='mt-2'></FaUser>
+                                                        <FaUser className='mb-1'></FaUser>
                                                 }
                                             </button>
                                         </OverlayTrigger>

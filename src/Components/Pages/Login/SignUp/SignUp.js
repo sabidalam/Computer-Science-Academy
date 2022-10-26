@@ -11,7 +11,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
     const [error, setError] = useState(null);
-    const { createUser, providerLogin } = useContext(AuthContext);
+    const { createUser, providerLogin, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const provider = new GoogleAuthProvider();
@@ -21,8 +21,24 @@ const SignUp = () => {
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photoUrl = form.url.value;
+        const photoURL = form.url.value;
         const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                handleUpdateUser(name, photoURL)
+                navigate('/');
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = { displayName: name, photoURL: photoURL }
+        updateUserProfile(profile)
+            .then(() => {
+            }).catch(error => console.error(error));
     }
 
     const handleGoogleSignIn = () => {
