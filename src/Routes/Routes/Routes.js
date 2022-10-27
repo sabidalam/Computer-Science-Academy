@@ -8,6 +8,7 @@ import Login from "../../Components/Pages/Login/Login/Login";
 import SignUp from "../../Components/Pages/Login/SignUp/SignUp";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import { BiSad } from 'react-icons/bi';
+import Faq from "../../Components/Pages/FAQ/Faq";
 
 export const routes = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             }
         ]
+    },
+    {
+        path: '/faq',
+        element: <Faq></Faq>
     },
     {
         path: '/blog',
