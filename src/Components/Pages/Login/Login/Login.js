@@ -9,6 +9,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import Headers from '../../SharedPage/Header/Headers';
+import Footer from '../../SharedPage/Footer/Footer';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -106,6 +107,7 @@ const Login = () => {
                 </ButtonGroup>
 
             </div>
+            <Footer></Footer>
         </div>
     );
 };

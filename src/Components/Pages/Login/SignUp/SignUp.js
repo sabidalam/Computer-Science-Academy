@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import Headers from '../../SharedPage/Header/Headers';
+import Footer from '../../SharedPage/Footer/Footer';
 
 
 const SignUp = () => {
@@ -115,6 +116,7 @@ const SignUp = () => {
                     <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> SignIn via Github</Button>
                 </ButtonGroup>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

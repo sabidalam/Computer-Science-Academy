@@ -1,6 +1,7 @@
 import React from 'react';
 import Headers from '../SharedPage/Header/Headers';
 import Accordion from 'react-bootstrap/Accordion';
+import Footer from '../SharedPage/Footer/Footer';
 
 const Blog = () => {
     return (
@@ -61,7 +62,7 @@ const Blog = () => {
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-
+            <Footer></Footer>
         </div>
     );
 };

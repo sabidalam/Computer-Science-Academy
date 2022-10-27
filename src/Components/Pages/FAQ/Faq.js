@@ -1,19 +1,20 @@
 import React from 'react';
 import Headers from '../SharedPage/Header/Headers';
 import Accordion from 'react-bootstrap/Accordion';
+import Footer from '../SharedPage/Footer/Footer';
 
 const Faq = () => {
     return (
         <div>
             <Headers></Headers>
-            <div>
+            <div className='container'>
                 <h3 className="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
                 <h5 className="text-center text-secondary mb-5">
                     Find the answers for the most frequently asked questions below
                 </h5>
             </div>
-            <div className='d-flex container'>
-                <div className='w-50 container'>
+            <div className='d-md-flex container'>
+                <div className='w-md-50 container mb-5'>
                     <Accordion>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header><h5>What is React?</h5></Accordion.Header>
@@ -41,7 +42,7 @@ const Faq = () => {
                         </Accordion.Item>
                     </Accordion>
                 </div>
-                <div className='w-50 container'>
+                <div className='w-md-50 container'>
                     <Accordion>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header><h5>What is DOM?</h5></Accordion.Header>
@@ -72,6 +73,7 @@ const Faq = () => {
                     </Accordion>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

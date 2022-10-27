@@ -40,7 +40,7 @@ const Headers = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="ms-5 me-auto">
+                        <Nav className="ms-md-5 me-auto">
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/'>Courses</Link>
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/faq'>FAQ</Link>
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/blog'>Blog</Link>
@@ -50,7 +50,6 @@ const Headers = () => {
                         </Nav>
 
                         <Nav className='mb-1'>
-
                             {
                                 user?.uid ?
                                     <>

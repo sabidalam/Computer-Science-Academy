@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
+import Footer from '../Pages/SharedPage/Footer/Footer';
 import Headers from '../Pages/SharedPage/Header/Headers';
 import LeftSideNav from '../Pages/SharedPage/LeftSideNav/LeftSideNav';
 
@@ -18,6 +19,8 @@ const Main = () => {
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
+
 
         </div>
     );
