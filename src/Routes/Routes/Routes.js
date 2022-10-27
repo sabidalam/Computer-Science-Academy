@@ -9,7 +9,6 @@ import SignUp from "../../Components/Pages/Login/SignUp/SignUp";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import { BiSad } from 'react-icons/bi';
 import Faq from "../../Components/Pages/FAQ/Faq";
-import Topic from "../../Components/Pages/Topic/Topic";
 
 export const routes = createBrowserRouter([
 
@@ -21,11 +20,6 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/courses')
-            },
-            {
-                path: '/courses',
-                element: <Topic></Topic>,
-
             },
             {
                 path: '/topic/:id',
