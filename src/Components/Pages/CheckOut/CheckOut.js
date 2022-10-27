@@ -26,13 +26,13 @@ const CheckOut = () => {
                                 </div>
                             </div>
                             <p className='fw-semibold text-warning'>Price: ${price}</p>
-
+                            <Button variant="primary">Purchase Now</Button>
                         </div>
                         <div className='text-center'>
                             <Card.Img className='m-2' style={{ width: '200px', height: '150px' }} src={thumbnail_url} />
                         </div>
                     </div>
-                    <Button variant="primary">Purchase Now</Button>
+
                 </Card.Body>
             </Card>
         </div>
