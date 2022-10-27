@@ -75,7 +75,7 @@ const Login = () => {
     return (
         <div>
             <Headers></Headers>
-            <div className='w-25 mx-auto container my-5'>
+            <div className='w-50 mx-auto container my-5'>
                 <h3 className='my-4'>Please Login!!</h3>
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -87,9 +87,11 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name='password' placeholder="Password" />
                     </Form.Group>
-                    <Button className='form-control' variant="primary" type="submit">
-                        Login
-                    </Button>
+                    <div className='text-center'>
+                        <Button className='w-75' variant="primary" type="submit">
+                            Login
+                        </Button>
+                    </div>
                     <br />
                     <Form.Text className='text-danger'>
                         {error}
@@ -101,10 +103,12 @@ const Login = () => {
                     <span>Or</span>
                     <hr className='w-25' />
                 </div>
-                <ButtonGroup vertical className='w-100'>
-                    <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> < FcGoogle className='fs-4 mb-1'></FcGoogle> Login via Google</Button>
-                    <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
-                </ButtonGroup>
+                <div className='text-center'>
+                    <ButtonGroup vertical className='w-75'>
+                        <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> < FcGoogle className='fs-4 mb-1'></FcGoogle> Login via Google</Button>
+                        <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
+                    </ButtonGroup>
+                </div>
 
             </div>
             <Footer></Footer>

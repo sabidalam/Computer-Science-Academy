@@ -25,22 +25,22 @@ export const routes = createBrowserRouter([
             {
                 path: '/allCourses',
                 element: <AllCourses></AllCourses>,
-                loader: () => fetch('http://localhost:5000/courses')
+                loader: () => fetch('https://computer-science-academy-server.vercel.app/courses')
             },
             {
                 path: '/topic/:id',
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/topic/${params.id}`)
+                loader: ({ params }) => fetch(`https://computer-science-academy-server.vercel.app/topic/${params.id}`)
             },
             {
                 path: '/course/:id',
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://computer-science-academy-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRouter><CheckOut></CheckOut></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://computer-science-academy-server.vercel.app/course/${params.id}`)
             }
         ]
     },
