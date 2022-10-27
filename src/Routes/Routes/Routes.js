@@ -7,6 +7,7 @@ import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login/Login";
 import SignUp from "../../Components/Pages/Login/SignUp/SignUp";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import { BiSad } from 'react-icons/bi';
 
 export const routes = createBrowserRouter([
     {
@@ -47,6 +48,16 @@ export const routes = createBrowserRouter([
     {
         path: '/signUp',
         element: <SignUp></SignUp>
+    },
+    {
+        path: '*',
+        element:
+            <div className='mt-5 text-center'>
+                <BiSad className="fs-1"></BiSad>
+                <h2 className='text-danger'>404 not found!</h2>
+                <h3 className='text-secondary'>The route you are searching is not available!!!</h3>
+                <h3 className='text-secondary'>Please try for a valid route!!!</h3>
+            </div>
     }
 
 ])

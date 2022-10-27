@@ -3,16 +3,25 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaDownload } from 'react-icons/fa';
+import { createRef } from 'react';
+import Pdf from "react-to-pdf";
 
 const Courses = () => {
     const courseDetail = useLoaderData();
     const { _id, topic_id, thumbnail_url, name, details, instructor, others_info, price } = courseDetail;
+
+    const ref = createRef();
+
     return (
         <div>
-            <Card className='mx-auto mb-5 w-75'>
+            <Card className='mx-auto mb-5 w-75' ref={ref}>
                 <Card.Header className='d-flex justify-content-between align-items-center'>
                     <h6>Computer Science Course {topic_id}</h6>
-                    <button className='border-0'><FaDownload></FaDownload></button>
+                    <div>
+                        <Pdf targetRef={ref} filename="course.pdf">
+                            {({ toPdf }) => <button onClick={toPdf} className='border-0'><FaDownload></FaDownload></button>}
+                        </Pdf>
+                    </div>
                 </Card.Header>
                 <Card.Img className='mt-4 mx-auto w-75' variant="top" src={thumbnail_url} />
                 <Card.Body>

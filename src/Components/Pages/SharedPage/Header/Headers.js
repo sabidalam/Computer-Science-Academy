@@ -10,6 +10,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { Button, Image } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
+import ToggleMode from '../../../ToggleMode/ToggleMode';
 
 
 const Headers = () => {
@@ -44,8 +45,12 @@ const Headers = () => {
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/faq'>FAQ</Link>
                             <Link className='fw-semibold me-4 text-decoration-none text-light' to='/blog'>Blog</Link>
                         </Nav>
+                        <Nav className='me-4'>
+                            <ToggleMode></ToggleMode>
+                        </Nav>
 
-                        <Nav>
+                        <Nav className='mb-1'>
+
                             {
                                 user?.uid ?
                                     <>
