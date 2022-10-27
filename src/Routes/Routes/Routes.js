@@ -9,16 +9,22 @@ import SignUp from "../../Components/Pages/Login/SignUp/SignUp";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import { BiSad } from 'react-icons/bi';
 import Faq from "../../Components/Pages/FAQ/Faq";
+import AllCourses from "../../Components/Pages/AllCourses/AllCourses";
 
 export const routes = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home></Home>
 
+    },
     {
         path: '/',
         element: <Main></Main>,
         children: [
+
             {
-                path: '/',
-                element: <Home></Home>,
+                path: '/allCourses',
+                element: <AllCourses></AllCourses>,
                 loader: () => fetch('http://localhost:5000/courses')
             },
             {

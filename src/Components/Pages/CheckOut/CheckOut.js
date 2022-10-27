@@ -9,7 +9,7 @@ const CheckOut = () => {
     const { name, instructor, thumbnail_url, others_info, level, rating, price } = course;
 
     return (
-        <div>
+        <div className='mt-5'>
             <Card>
                 <Card.Header as="h5">{name}</Card.Header>
                 <Card.Body>

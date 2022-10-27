@@ -13,7 +13,7 @@ const Courses = () => {
     const ref = createRef();
 
     return (
-        <div>
+        <div className='mt-5'>
             <Card className='mx-auto mb-5 w-75' ref={ref}>
                 <Card.Header className='d-flex justify-content-between align-items-center'>
                     <h6>Computer Science Course {topic_id}</h6>

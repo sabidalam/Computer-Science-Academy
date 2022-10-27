@@ -14,7 +14,7 @@ const LeftSideNav = () => {
     }, [])
 
     return (
-        <div>
+        <div className='mt-5'>
             <h4>All Topic</h4>
             {
                 topics.map(topic => <p key={topic.id}>

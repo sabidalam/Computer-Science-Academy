@@ -7,7 +7,7 @@ const Faq = () => {
     return (
         <div>
             <Headers></Headers>
-            <div className='container'>
+            <div className='container mt-5'>
                 <h3 className="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
                 <h5 className="text-center text-secondary mb-5">
                     Find the answers for the most frequently asked questions below

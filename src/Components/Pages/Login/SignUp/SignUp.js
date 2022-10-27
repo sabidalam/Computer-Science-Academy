@@ -33,7 +33,7 @@ const SignUp = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                handleUpdateUser(name, photoURL)
+                handleUpdateUser(name, photoURL);
                 navigate('/');
             })
             .catch(error => {

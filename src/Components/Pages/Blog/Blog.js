@@ -7,7 +7,7 @@ const Blog = () => {
     return (
         <div>
             <Headers></Headers>
-            <div className='text-center'>
+            <div className='text-center mt-5'>
                 <span className='bg-primary px-5 py-2 fs-4 fw-semibold rounded text-center text-light'>Blog</span>
             </div>
             <Accordion className='container w-75 mx-auto my-5' defaultActiveKey="0">
