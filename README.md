@@ -9,15 +9,23 @@ It is a computer science learning platform. There are many exclusive courses for
 
 2.It is a single page website with Dynamic Routing.
 
-3.Use React Bootstrap.
-
-5.Use Own Server site.
+3.Use Own Server site.
 
 4.Use Api Data.
 
-6.Use Firebase Authentication system.
+5.It's a responsive website.
 
-7.Use React Router.
+6.Authenticate using Firebase.
 
-8.It's a responsive website.
+# List of (frameworks, libraries) use in this Project
+
+1.React.
+
+2.React Bootstrap.
+
+3.React Router.
+
+4.FireBase Authentication.
+
+5.Context API.
 
