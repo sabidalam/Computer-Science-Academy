@@ -9,7 +9,7 @@ It is a computer science learning platform. There are many exclusive courses for
 
 2.It is a single page website with Dynamic Routing.
 
-3.Use Own Server site.
+3.Use Own Server side.
 
 4.Use Api Data.
 
@@ -28,4 +28,6 @@ It is a computer science learning platform. There are many exclusive courses for
 4.FireBase Authentication.
 
 5.Context API.
+
+# Server Side Code Link: https://github.com/sabidalam/Computer-Science-Academy-Server-Side
 
