@@ -1,0 +1,15 @@
+.navbar {
+    box-shadow: 2px 2px 2px rgba(72, 157, 227, 0.886);
+}
+
+.dark {
+    background-color: #000;
+    color: #2112c9;
+
+}
+
+.light {
+    background-color: #fff;
+    color: rgb(33, 18, 201);
+
+}

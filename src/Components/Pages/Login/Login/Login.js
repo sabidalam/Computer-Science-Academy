@@ -106,7 +106,7 @@ const Login = () => {
                 <div className='text-center'>
                     <ButtonGroup vertical className='w-75'>
                         <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> < FcGoogle className='fs-4 mb-1'></FcGoogle> Login via Google</Button>
-                        <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
+                        <Button onClick={handleGithubSignIn} variant="outline-secondary"> <FaGithub className='fs-4 mb-1'></FaGithub> Login via Github</Button>
                     </ButtonGroup>
                 </div>
 

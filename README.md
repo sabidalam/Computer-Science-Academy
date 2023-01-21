@@ -5,11 +5,11 @@ It is a computer science learning platform. There are many exclusive courses for
 
 # Project Feature
 
-1.This website is made by using React.
+1.Toggle Theme (dark/light).
 
 2.It is a single page website with Dynamic Routing.
 
-3.Use Own Server side.
+3.Download pdf file for course details.
 
 4.Use Api Data.
 
@@ -23,9 +23,9 @@ It is a computer science learning platform. There are many exclusive courses for
 
 2.React Bootstrap.
 
-3.React Router.
+3.React Router Dom.
 
-4.FireBase Authentication.
+4.FireBase.
 
 5.Context API.
 
